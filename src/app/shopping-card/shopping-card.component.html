@@ -1,0 +1,30 @@
+<h1>Shopping Card</h1>
+<h4>You have {{card.length}} Items In Your Card</h4>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align: center;">Product</th>
+        <th scope="col" style="text-align: center;">Quantity</th>
+        <th scope="col" style="text-align: center;">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of card">
+        <td style="text-align: center;">
+          <img [src]="item.product.imgURL" class="rounded" width="50" style="margin-right: 10px;" height="50" [alt]="item.product.title">
+            <span>{{item.product.title}}</span>
+        </td>
+        <td style="text-align: center;">
+          <div>
+            <app-card-btn [product]="item.product"></app-card-btn>
+          </div>
+        </td>
+        <td style="text-align: center;">{{item.product.price*item.count | currency:'USD'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Total : {{total | currency:'USD'}}</strong>
+  <div>
+    <button [disabled]="total==0" class="btn btn-danger btnMargin" (click)="clearCard()">Clear Card</button>
+    <button [disabled]="total==0" class="btn btn-info btnMargin" (click)="checkOut()">Check Out</button>
+  </div>

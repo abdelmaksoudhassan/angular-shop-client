@@ -1,0 +1,23 @@
+<h5>You Must Be Authenticated :-</h5>
+<li>To Navigate Check Out Page</li>
+<li>To Send Order</li>
+<div class="parent">
+    <form [formGroup]="userDate" >
+        <button type="button" class="btn btn-dark btn-block" (click)="switchMode()">
+            Switch To {{mode == 'sign' ? 'Log In' : 'Sign Up'}} Mode
+        </button>
+        <div class="form-group">
+            <label for="inputEmail4">Email</label>
+            <input (focus)="errMsg=null" formControlName="email" type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword4">Password</label>
+            <input (focus)="errMsg=null" formControlName="password" type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="alert alert-danger" *ngIf="errMsg">{{errMsg}}</div>
+        <app-loader *ngIf="visible"></app-loader>
+        <button type="button" class="btn btn-primary" (click)="handleUserData()">
+            {{mode == 'sign' ? 'Sign Up' : 'Log In'}}
+        </button>
+    </form>
+</div>

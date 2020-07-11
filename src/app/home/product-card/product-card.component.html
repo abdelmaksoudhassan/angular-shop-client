@@ -1,0 +1,10 @@
+<div class="card" style="width: 16rem;">
+    <img [src]="product.imgURL" class="card-img-top" [alt]="product.title">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.price | currency:'USD'}}</p>
+      <div class="card-footer" *ngIf="addBtn">
+        <app-card-btn [product]="product"></app-card-btn>
+      </div>
+    </div>
+  </div>

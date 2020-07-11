@@ -1,0 +1,33 @@
+.side{
+    position: fixed;
+    left: 0px;
+    border-right: 1px solid #dfe3ee;
+    z-index: 200;
+    background-color: white;
+}
+.show_hide{
+    position: absolute;
+    right: -50px;
+    top: 40%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    cursor: pointer;
+    padding: 2px;
+    z-index: 1000;
+}
+.hide{
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+.show{
+    transform: translateX(0%);
+    transition: all 0.5s ease;
+}
+.body{
+    margin: 50px;
+}
+.uk-search-input{
+    width: unset;
+}

@@ -1,0 +1,6 @@
+<app-product-filter [category]="category"></app-product-filter>
+<div class="row justify-content-center">
+  <ng-container *ngFor="let p of filteredProducts;let i = index">
+      <app-product-card [product]='p' [addBtn]="true"></app-product-card>
+  </ng-container>
+</div>

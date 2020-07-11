@@ -1,0 +1,10 @@
+<div>
+    <button *ngIf="counter==0;else count" class="btn btn-primary btn-block" (click)="addToCard(product)">Add To Card</button>
+    <ng-template #count>
+        <div class="flex">
+            <button class="btn btn-danger" (click)="onDecrease(product)" > - </button>
+            <div>{{counter}}</div>
+            <button class="btn btn-success" (click)="onIncrease(product)" > + </button>
+        </div>
+    </ng-template>
+</div>
